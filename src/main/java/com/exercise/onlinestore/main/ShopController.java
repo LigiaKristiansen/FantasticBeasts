@@ -38,9 +38,10 @@ public class ShopController implements Initializable {
     @FXML
     private GridPane grid;
 
-    private List<Product> products = new ArrayList<>();
+    private final List<Product> products = new ArrayList<>();
     private Image image;
     private MyListener myListener;
+
     private List<Product> getData() {
         List<Product> products = new ArrayList<>();
         Product product;
@@ -148,7 +149,7 @@ public class ShopController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 ItemController itemController = fxmlLoader.getController();
-                itemController.setData(products.get(i),myListener);
+                itemController.setData(products.get(i), myListener);
 
                 if (column == 3) {
                     column = 0;

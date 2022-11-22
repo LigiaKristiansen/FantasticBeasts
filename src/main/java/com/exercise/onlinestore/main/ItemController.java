@@ -16,6 +16,8 @@ public class ItemController {
 
     @FXML
     private ImageView img;
+    private Product product;
+    private MyListener myListener;
 
     public ItemController() {
     }
@@ -24,9 +26,6 @@ public class ItemController {
     private void click(MouseEvent mouseEvent) {
         myListener.onClickListener(product);
     }
-
-    private Product product;
-    private MyListener myListener;
 
     public void setData(Product product, MyListener myListener) {
         this.product = product;
