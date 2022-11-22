@@ -23,6 +23,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ShopController implements Initializable {
+    public Label productDescriptionLabel;
     @FXML
     private VBox chosenProductCard;
     @FXML
@@ -47,6 +48,7 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("Bowtruckle");
+        product.setDescription("Description");
         product.setPrice(20000);
         product.setImgSrc("/img/Bowtruckle.png");
         //product.setImgSrc("/main/resources/img/Bowtruckle.png");
@@ -121,6 +123,7 @@ public class ShopController implements Initializable {
 
     private void setChosenProduct(Product product) {
         productNameLabel.setText(product.getName());
+        productDescriptionLabel.setText(product.getDescription());
         productPriceLabel.setText(product.getPrice() + " " + Main.CURRENCY);
         image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(product.getImgSrc())));
         productImg.setImage(image);
