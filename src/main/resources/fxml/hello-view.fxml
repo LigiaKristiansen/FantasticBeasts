@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="616.0" style="-fx-background-color: #b2adaa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petonlineshop.HelloController">
+        <children>
+            <Label layoutX="27.0" layoutY="25.0" prefHeight="18.0" prefWidth="211.0" text="Fantastic Beasts Pet Shop">
+                <font>
+                    <Font name="Snap ITC" size="13.0" />
+                </font>
+            </Label>
+            <Label layoutX="583.0" layoutY="25.0" style="-fx-background-color: #b2adaa;" text="0" />
+            <Label layoutX="323.0" layoutY="25.0" text="For employees" />
+            <Label layoutX="287.0" layoutY="25.0" text="Shop" />
+            <Separator layoutX="27.0" layoutY="54.0" prefHeight="4.0" prefWidth="578.0" />
+            <Label layoutX="142.0" layoutY="58.0" prefHeight="30.0" prefWidth="382.0" text="The Pet you were looking for ">
+                <font>
+                    <Font name="Snap ITC" size="22.0" />
+                </font>
+            </Label>
+            <Label layoutX="151.0" layoutY="89.0" prefHeight="30.0" prefWidth="370.0" text="but could not find anywhere">
+                <font>
+                    <Font name="Snap ITC" size="22.0" />
+                </font>
+            </Label>
+            <ImageView fx:id="logo" fitHeight="183.0" fitWidth="594.0" layoutX="15.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pet.JPG" />
+         </image>
+            </ImageView>
+            <Label layoutX="15.0" layoutY="311.0" prefHeight="30.0" prefWidth="286.0" text="Welcome to Fantastic">
+                <font>
+                    <Font name="Snap ITC" size="22.0" />
+                </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="341.0" prefHeight="30.0" prefWidth="224.0" text="Beasts Pet Shop">
+                <font>
+                    <Font name="Snap ITC" size="22.0" />
+                </font>
+            </Label>
+            <Label layoutX="362.0" layoutY="302.0" text="If you were looking for the friend for the life" />
+            <Label layoutX="362.0" layoutY="317.0" text="you came to the right place" />
+            <Label layoutX="362.0" layoutY="332.0" prefHeight="18.0" prefWidth="240.0" text="All Fantastic Beast Pet shop you will find the" />
+            <Label layoutX="362.0" layoutY="347.0" prefHeight="18.0" prefWidth="240.0" text="most amazing magical creatures." />
+            <Label layoutX="362.0" layoutY="362.0" prefHeight="18.0" prefWidth="250.0" text="Take a look at our section and choose the one" />
+            <Label layoutX="362.0" layoutY="377.0" prefHeight="18.0" prefWidth="250.0" text="that suits you the best." />
+            <ImageView fx:id="cartLogo" fitHeight="18.0" fitWidth="22.0" layoutX="554.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@cart.JPG" />
+                </image>
+            </ImageView>
+        </children>
+    </AnchorPane>
