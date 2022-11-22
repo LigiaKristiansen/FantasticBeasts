@@ -31,18 +31,11 @@
                 <VBox prefHeight="200.0" prefWidth="435.0" styleClass="right-bar" BorderPane.alignment="CENTER">
                     <children>
                         <HBox alignment="CENTER" prefHeight="110.0" prefWidth="200.0">
-                            <children>
-                                <Label prefHeight="49.0" prefWidth="128.0" text="Fruits" textFill="#878787">
+                                <Label prefHeight="49.0" prefWidth=".0" text="Pick a Beast" textFill="#878787">
                                     <font>
-                                        <Font name="Cambria Bold" size="40.0"/>
+                                        <Font name="Ravie" size="28"/>
                                     </font>
                                 </Label>
-                                <Label text="Market" textFill="#878787">
-                                    <font>
-                                        <Font name="Cambria" size="40.0"/>
-                                    </font>
-                                </Label>
-                            </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0" VBox.vgrow="NEVER">
                             <VBox.margin>
@@ -151,7 +144,7 @@
                                 </Button>
                             </children>
                             <styleClass>
-                                <String fx:value="chosen-fruit-card"/>
+                                <String fx:value="chosen-product-card"/>
                                 <String fx:value="shadow"/>
                             </styleClass>
                         </VBox>
