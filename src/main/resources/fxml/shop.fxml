@@ -129,6 +129,9 @@
                         <ImageView fitHeight="49.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
                             <Image url="@../img/monster-cartoon-icon.png" />
                         </ImageView>
+                  <HBox.margin>
+                     <Insets bottom="20.0" />
+                  </HBox.margin>
                     </HBox>
                     <Pane prefHeight="84.0" prefWidth="96.0" />
                 </HBox>
