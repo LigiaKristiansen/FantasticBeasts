@@ -30,12 +30,12 @@
             <left>
                 <VBox prefHeight="200.0" prefWidth="435.0" styleClass="right-bar" BorderPane.alignment="CENTER">
                     <children>
-                        <HBox alignment="CENTER" prefHeight="110.0" prefWidth="200.0">
-                                <Label prefHeight="49.0" prefWidth=".0" text="Pick a Beast" textFill="#878787">
-                                    <font>
-                                        <Font name="Ravie" size="28"/>
-                                    </font>
-                                </Label>
+                        <HBox alignment="CENTER" prefHeight="110.0" prefWidth="300.0">
+                            <Label prefHeight="50.0" prefWidth="300.0" text="Pick a Beast" textFill="#878787">
+                                <font>
+                                    <Font name="Ravie" size="28"/>
+                                </font>
+                            </Label>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0" VBox.vgrow="NEVER">
                             <VBox.margin>
@@ -48,7 +48,7 @@
                                         <Insets left="20.0"/>
                                     </HBox.margin>
                                     <font>
-                                        <Font name="Cambria" size="18.0"/>
+                                        <Font name="Arial" size="18.0"/>
                                     </font>
                                 </TextField>
                                 <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0"
@@ -67,16 +67,16 @@
                             <children>
                                 <HBox prefHeight="60.0" prefWidth="335.0">
                                     <children>
-                                        <Label fx:id="productNameLabel" prefHeight="48.0" prefWidth="276.0" text="Peach"
+                                        <Label fx:id="productNameLabel" prefHeight="48.0" prefWidth="276.0" text="Bowtruckle"
                                                textFill="WHITE">
                                             <font>
-                                                <Font name="Cambria" size="36.0"/>
+                                                <Font name="Arial" size="36.0"/>
                                             </font>
                                         </Label>
                                         <Label fx:id="productPriceLabel" prefHeight="57.0" prefWidth="171.0"
                                                text="\$2.99" textFill="WHITE">
                                             <font>
-                                                <Font name="Cambria" size="36.0"/>
+                                                <Font name="Arial" size="36.0"/>
                                             </font>
                                         </Label>
                                     </children>
@@ -84,7 +84,7 @@
                                         <Insets left="20.0" top="30.0"/>
                                     </VBox.margin>
                                 </HBox>
-                                <ImageView fx:id="productImg" fitHeight="170.0" fitWidth="285.0" pickOnBounds="true"
+                                <ImageView fx:id="productImg" fitHeight="300.0" fitWidth="420.0" pickOnBounds="true"
                                            preserveRatio="true">
                                     <image>
                                         <Image url="@../img/Bowtruckle.png"/>
@@ -93,48 +93,9 @@
                                         <Insets top="20.0"/>
                                     </VBox.margin>
                                 </ImageView>
-                                <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0">
-                                    <children>
-                                        <Label prefHeight="53.0" prefWidth="167.0" text="Kg" textFill="WHITE">
-                                            <font>
-                                                <Font name="Cambria" size="24.0"/>
-                                            </font>
-                                        </Label>
-                                        <ComboBox prefHeight="45.0" prefWidth="130.0" promptText="1"
-                                                  styleClass="comboBox"/>
-                                    </children>
-                                    <VBox.margin>
-                                        <Insets top="20.0"/>
-                                    </VBox.margin>
-                                </HBox>
-                                <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
-                                    <VBox.margin>
-                                        <Insets bottom="20.0" top="20.0"/>
-                                    </VBox.margin>
-                                    <children>
-                                        <Separator prefHeight="0.0" prefWidth="118.0"/>
-                                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="or"
-                                               textFill="WHITE">
-                                            <font>
-                                                <Font name="Cambria" size="24.0"/>
-                                            </font>
-                                        </Label>
-                                        <Separator prefHeight="0.0" prefWidth="118.0"/>
-                                    </children>
-                                </HBox>
-                                <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0">
-                                    <children>
-                                        <Label prefHeight="53.0" prefWidth="167.0" text="Kg" textFill="WHITE">
-                                            <font>
-                                                <Font name="Cambria" size="24.0"/>
-                                            </font>
-                                        </Label>
-                                        <ComboBox prefHeight="45.0" prefWidth="130.0" promptText="selected"
-                                                  styleClass="comboBox"/>
-                                    </children>
-                                </HBox>
+
                                 <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn"
-                                        text="ADD TO CART" textFill="#828282">
+                                        text="ADD TO SUITCASE" textFill="#828282">
                                     <VBox.margin>
                                         <Insets bottom="20.0" top="30.0"/>
                                     </VBox.margin>
@@ -160,76 +121,35 @@
                                 <Insets left="20.0" right="20.0"/>
                             </VBox.margin>
                             <children>
-                                <Label prefHeight="29.0" prefWidth="88.0" text="language" textFill="#878787">
-                                    <font>
-                                        <Font name="Cambria Bold" size="18.0"/>
-                                    </font>
-                                </Label>
-                                <Label prefHeight="29.0" prefWidth="77.0" text="English" textFill="#878787"
-                                       underline="true">
-                                    <font>
-                                        <Font name="Cambria" size="18.0"/>
-                                    </font>
-                                </Label>
                                 <Pane prefHeight="65.0" prefWidth="393.0" HBox.hgrow="ALWAYS"/>
-                                <Label prefHeight="62.0" prefWidth="100.0" text="My Account" textFill="#878787">
-                                    <font>
-                                        <Font name="Cambria" size="18.0"/>
-                                    </font>
-                                </Label>
-                                <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../img/cart-icon.png"/>
+                                        <Image url="@../img/suitcase-outline-icon.png"/>
                                     </image>
                                 </ImageView>
+                                <Label prefHeight="62.0" prefWidth="100.0" text=" 0" textFill="#878787">
+                                    <font>
+                                        <Font name="Arial" size="18.0"/>
+                                    </font>
+                                </Label>
+
                             </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0">
                             <children>
                                 <Pane prefHeight="84.0" prefWidth="96.0"/>
-                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="380.0"
-                                      styleClass="free-delivery-card">
-                                    <children>
-                                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="214.0">
-                                            <children>
-                                                <Label prefHeight="29.0" prefWidth="190.0" text="Free delivery"
-                                                       textFill="#878787">
-                                                    <font>
-                                                        <Font name="Cambria Bold" size="18.0"/>
-                                                    </font>
-                                                </Label>
-                                                <Label prefHeight="16.0" prefWidth="190.0" text="over $20 order"
-                                                       textFill="#878787">
-                                                    <font>
-                                                        <Font name="Cambria" size="15.0"/>
-                                                    </font>
-                                                </Label>
-                                            </children>
-                                        </VBox>
-                                        <ImageView fitHeight="49.0" fitWidth="56.0" pickOnBounds="true"
-                                                   preserveRatio="true">
-                                            <image>
-                                                <Image url="@../img/delivery-truck-icon.png"/>
-                                            </image>
-                                        </ImageView>
-                                    </children>
-                                </HBox>
+
                                 <Pane prefHeight="84.0" prefWidth="96.0" HBox.hgrow="ALWAYS"/>
                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="336.0"
-                                      styleClass="shopping-online-card">
+                                      styleClass="delivery-card">
                                     <children>
                                         <VBox alignment="CENTER" prefHeight="100.0" prefWidth="203.0">
                                             <children>
-                                                <Label prefHeight="29.0" prefWidth="190.0" text="Shopping online"
-                                                       textFill="#878787">
+                                                <Label prefHeight="29.0" prefWidth="190.0" text="Instant portkey delivery"
+                                                       textFill="#006400">
                                                     <font>
-                                                        <Font name="Cambria Bold" size="18.0"/>
-                                                    </font>
-                                                </Label>
-                                                <Label prefHeight="20.0" prefWidth="207.0"
-                                                       text="get your shopping in same day" textFill="#878787">
-                                                    <font>
-                                                        <Font name="Cambria" size="15.0"/>
+                                                        <Font name="Arial Bold" size="16.0"/>
                                                     </font>
                                                 </Label>
                                             </children>
