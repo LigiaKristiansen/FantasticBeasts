@@ -48,8 +48,9 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("Bowtruckle");
-        product.setDescription("Description");
-        product.setPrice(20000);
+        product.setDescription("The tiny, hand-sized Bowtruckles dwell within trees and, due to to their stick-like appearance," +
+                " can camouflage into their environment. These creatures are also expert lock-pickers, which makes them useful pets to have.");
+        product.setPrice(50000);
         product.setImgSrc("/img/Bowtruckle.png");
         //product.setImgSrc("/main/resources/img/Bowtruckle.png");
         product.setColor("6A7324");
@@ -57,13 +58,18 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("Demiguise");
-        product.setPrice(20000);
+        product.setDescription("Demiguise resemble a cross between a sloth and a monkey and have long silver hair." +
+                "Demiguise fur can be used to weave invisibility cloaks because these creature possess the ability to turn invisible. " +
+                "They also have the ability to see the future. Both abilities make them difficult to catch.");
+        product.setPrice(300000);
         product.setImgSrc("/img/Demiguise.png");
         product.setColor("A7745B");
         products.add(product);
 
         product = new Product();
         product.setName("Doxy");
+        product.setDescription("Doxies are often referred to as \"biting fairies\" but are actually a different species." +
+                " Like fairies, Doxies are small and have wings, but they also have sharp teeth, extra arms and legs, and large ears.");
         product.setPrice(20000);
         product.setImgSrc("/img/Doxy.png");
         product.setColor("E7C00F");
@@ -71,6 +77,10 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("Fwooper");
+        product.setDescription("Fwoopers are brightly colored birds, and while they look like fairly innocent creatures," +
+                " they can be deadly. The birds' feathers are said to be brightly colored because they originated from Africa." +
+                " The song of a Fwooper is enough to drive a person mad, so only one should be owned at any given time." +
+                " Wizards who keep one of these birds are advised to put a silencing spell on the Fwooper to ensure the wizard retains their sanity.");
         product.setPrice(20000);
         product.setImgSrc("/img/Fwooper.png");
         product.setColor("F16C31");
@@ -78,6 +88,7 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("Grindylow");
+        product.setDescription("Grindylow are small water-demons and use their tentacles to navigate through their underwater habitat and are known to be aggressive in nature.");
         product.setPrice(20000);
         product.setImgSrc("/img/Grindylow.png");
         product.setColor("291D36");
@@ -85,6 +96,8 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("Niffler");
+        product.setDescription("Nifflers are small and adorable platypus-like creatures. They're often escaping and causing trouble. " +
+                "These creatures have an attraction to anything shiny, which means they can be quite a menace.");
         product.setPrice(20000);
         product.setImgSrc("/img/Niffler.png");
         product.setColor("22371D");
@@ -92,6 +105,8 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("Occamy");
+        product.setDescription("Occamies are winged, serpentine creatures that hatch from eggs of pure silver." +
+                " These fantastic animals can grow and shrink in size in order to fill available spaces.");
         product.setPrice(20000);
         product.setImgSrc("/img/Occamy.png");
         product.setColor("FB5D03");
@@ -99,6 +114,9 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("SwoopingEvil");
+        product.setDescription("The Swooping Evil hides itself in a small cocoon, but when it reveals itself," +
+                " its quite intimidating to behold. The creature has bright blue wings like a butterfly but has a wolf-likeskull in place of a head." +
+                " This creature is particularly dangerous because it eats human brains");
         product.setPrice(20000);
         product.setImgSrc("/img/SwoopingEvil.png");
         product.setColor("80080C");
@@ -106,6 +124,8 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("Thunderbird");
+        product.setDescription("The aptly named Thunderbird is a huge avian creature that can summon storms." +
+                " From Arizona, The Thunderbird is a regal creature that is highly sensitive to danger.");
         product.setPrice(20000);
         product.setImgSrc("/img/Thunderbird.png");
         product.setColor("FFB605");
@@ -113,6 +133,8 @@ public class ShopController implements Initializable {
 
         product = new Product();
         product.setName("Zouwu");
+        product.setDescription("The Zouwu is a gigantic feline creature, and, despite its intimidating size, it can be easily tamed." +
+                " Zouwu has an apparent ability to apparate.");
         product.setPrice(20000);
         product.setImgSrc("/img/Zouwu.png");
         product.setColor("5F060E");
@@ -169,7 +191,7 @@ public class ShopController implements Initializable {
                 grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
                 grid.setMaxHeight(Region.USE_PREF_SIZE);
 
-                GridPane.setMargin(anchorPane, new Insets(10));
+                GridPane.setMargin(anchorPane, new Insets(30));
             }
         } catch (IOException e) {
             e.printStackTrace();
