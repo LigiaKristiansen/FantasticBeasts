@@ -47,6 +47,20 @@ public class ShopController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    //------------------------------------------------------------------
+    //Koden nedan används för att kunna byta scen.
+    //Den byter ut rooten mot den root man namnger.
+    //Stagen sätts till befintlig stag genom att typecasta befintlig källa scen och window till först en node som sen typecastas till en stage.
+    //Nästa kodrad byter din Scen till den nya scenen i Parant root. Raden efter det sätter upp Scenen på din Stage och sen visas allt.
+    public void switchToWindow4(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Window4.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    //------------------------------------------------------------------
+
     private List<Product> getData() {
         List<Product> products = new ArrayList<>();
         Product product;
@@ -177,17 +191,5 @@ public class ShopController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    //Koden nedan används för att kunna byta scen.
-    //Den byter ut rooten mot den root man namnger.
-    //Stagen sätts till befintlig stag genom att typecasta befintlig källa scen och window till först en node som sen typecastas till en stage.
-    //Nästa kodrad byter din Scen till den nya scenen i Parant root. Raden efter det sätter upp Scenen på din Stage och sen visas allt.
-    public void switchToWindow4(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/window4.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
     }
 }
