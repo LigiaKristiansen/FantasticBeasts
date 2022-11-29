@@ -15,7 +15,7 @@ import java.util.Objects;
 
 public class Main extends Application {
 
-    public static final String CURRENCY = " kr";
+    public static final String CURRENCY = " ʛ";
     @Override
     public void start(Stage primaryStage) throws IOException{
 

@@ -7,7 +7,6 @@ public class Product {
     private String color;
     private String description;
 
-
     public String getName() {
         return name;
     }
