@@ -58,6 +58,7 @@ public class ShopController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        Window4Application window4Application = new Window4Application();
     }
     //------------------------------------------------------------------
 
