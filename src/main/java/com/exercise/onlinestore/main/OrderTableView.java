@@ -6,8 +6,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
 
-public class OrderTableView extends Window4Controller {
-    public OrderTableView() {
+public class OrderTableView {
+
+    public void InitializeOrderTableView(TableColumn<Order, String> customerName, TableColumn<Order, String> itemOrdered, TableColumn<Order, Integer> orderNr, TableColumn<Order, Integer> quantity) {
         //Här initieras de olika cellerna så de kan ta emot data.
         customerName.setCellValueFactory(new PropertyValueFactory<Order, String>("custName"));
         itemOrdered.setCellValueFactory(new PropertyValueFactory<Order, String>("itemOrdered"));
@@ -20,8 +21,8 @@ public class OrderTableView extends Window4Controller {
         //Konverterar text till tal TODO Fungerar inte riktigt som det skall, får fel.
         try {
             orderNr.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-            quantity.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        } catch (NumberFormatException E) {
+            //quantity.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        } catch (NumberFormatException e) {
             System.out.println("Skriv ett tal!");
         }
 
@@ -53,11 +54,5 @@ public class OrderTableView extends Window4Controller {
                 order.setQuantity(orderStringCellEditEvent.getNewValue());
             }
         });
-
-        //Bara random värden som läggs in i tabellen
-        tableViewOrder.getItems().add(new Order("Axel Axelsson", 1, "Huffelpuff", 1));
-        tableViewOrder.getItems().add(new Order("Björn Börjesson", 2, "Flopperflopp", 1));
-        tableViewOrder.getItems().add(new Order("Calle Capten", 3, "Dobe", 1));
-        tableViewOrder.getItems().add(new Order("Daniel Dinerso", 4, "WoopWoop", 1));
     }
 }
