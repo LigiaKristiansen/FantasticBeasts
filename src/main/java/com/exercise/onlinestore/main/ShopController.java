@@ -217,7 +217,7 @@ public class ShopController implements Initializable {
             e.printStackTrace();
         }
 
-        Button addButton = new Button("ADD TO SUITCASE");
+        /*Button addButton = new Button("ADD TO SUITCASE");
         addButton.setUserData(productNameLabel);
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -228,7 +228,7 @@ public class ShopController implements Initializable {
                 shoppingCart.addProducts(productName);
 
             }
-        });
+        });*/
     }
 
     public void showCartView(MouseEvent mouseEvent) {
