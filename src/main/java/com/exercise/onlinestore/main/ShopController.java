@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -19,6 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -217,18 +219,6 @@ public class ShopController implements Initializable {
             e.printStackTrace();
         }
 
-        /*Button addButton = new Button("ADD TO SUITCASE");
-        addButton.setUserData(productNameLabel);
-        addButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                Node sourceComponent = (Node)actionEvent.getSource();
-                String productName = (String)sourceComponent.getUserData();
-                ShoppingCart shoppingCart = ShoppingCart.getINSTANCE();
-                shoppingCart.addProducts(productName);
-
-            }
-        });*/
     }
 
     public void showCartView(MouseEvent mouseEvent) {
