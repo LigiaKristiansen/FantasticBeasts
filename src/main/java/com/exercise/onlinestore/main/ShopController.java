@@ -2,10 +2,14 @@ package com.exercise.onlinestore.main;
 
 
 import com.exercise.onlinestore.model.Product;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -143,6 +147,7 @@ public class ShopController implements Initializable {
         return products;
     }
 
+
     private void setChosenProduct(Product product) {
         productNameLabel.setText(product.getName());
         productDescriptionLabel.setText(product.getDescription());
@@ -162,8 +167,21 @@ public class ShopController implements Initializable {
                 public void onClickListener(Product product) {
                     setChosenProduct(product);
                 }
+
             };
         }
+        Button addButton = new Button("ADD TO SUITCASE");
+        addButton.setUserData(productNameLabel);
+        addButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Node sourceComponent = (Node)actionEvent.getSource();
+                String productName = (String)sourceComponent.getUserData();
+                ShoppingCart shoppingCart = ShoppingCart.getINSTANCE();
+                shoppingCart.addProducts(productName);
+            }
+        });
+
         int column = 0;
         int row = 1;
         try {

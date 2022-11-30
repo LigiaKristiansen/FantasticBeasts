@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.Cursor?>
 <AnchorPane onMousePressed="#click" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.ItemController">
     <children>
           <VBox alignment="CENTER_LEFT" fillWidth="false" prefWidth="200.0" styleClass="product-view">
@@ -20,6 +21,9 @@
                <viewport>
                   <Rectangle2D />
                </viewport>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
                 </ImageView>
                   <Label fx:id="nameLabel" contentDisplay="CENTER" text="Bowtruckle" textFill="WHITE">
                       <font>
