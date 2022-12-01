@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="332.0" prefWidth="442.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.BillingPrice">
+   <Label layoutX="45.0" layoutY="68.0" text="Regular Price">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="45.0" layoutY="107.0" text="Shipping">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="316.0" layoutY="68.0" text="SEK 938">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="316.0" layoutY="107.0" text="SEK 59">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="45.0" layoutY="142.0" text="Discount">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="313.0" layoutY="142.0" text="-SEK 59" textFill="#940909">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
+   <Separator layoutX="36.0" layoutY="181.0" prefHeight="6.0" prefWidth="370.0" />
+   <Label layoutX="45.0" layoutY="209.0" text="Total price (incl. VAT)">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="314.0" layoutY="209.0" text="SEK 621">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font>
+   </Label>
+   <Label layoutX="141.0" layoutY="27.0" text="Bill Information">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <Button layoutX="131.0" layoutY="260.0" mnemonicParsing="false" onAction="#next" prefHeight="38.0" prefWidth="179.0" style="-fx-background-color: #000;" text="Proceed to Next" textFill="#fcfbfb">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+</AnchorPane>
