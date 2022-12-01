@@ -54,11 +54,11 @@ public class Window4Controller implements Initializable {
     private Scene scene;
     private Parent root;
 
-    OrderTableView initializer = new OrderTableView();
+    OrderTableView orderTableView = new OrderTableView();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        initializer.InitializeOrderTableView(customerName, itemOrdered, orderNr, quantity);
+        orderTableView.InitializeOrderTableView(customerName, itemOrdered, orderNr, quantity);
 
         //Bara random värden som läggs in i tabellen
         tableViewOrder.getItems().add(new Order("Axel Axelsson", 1, "Huffelpuff", 1));

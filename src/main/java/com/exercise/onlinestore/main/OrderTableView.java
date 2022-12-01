@@ -18,14 +18,10 @@ public class OrderTableView {
         //För att kunna editera värdena så initieras en text klass som gör att man kan skriva in text i cellen. Man måste göra tabellen redigeringsbar i fxml.
         customerName.setCellFactory(TextFieldTableCell.forTableColumn());
         itemOrdered.setCellFactory(TextFieldTableCell.forTableColumn());
-        //Konverterar text till tal TODO Fungerar inte riktigt som det skall, får fel.
-        try {
-            orderNr.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-            //quantity.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        } catch (NumberFormatException e) {
-            System.out.println("Skriv ett tal!");
-        }
-
+        //Konverterar text till tal fångar ett felmeddelande om man skriver in tal men funktionen är ändå korrekt då text inte kan sparas.
+        orderNr.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        quantity.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        //---Förr att kunna redigera informationen i cellerna.
         customerName.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Order, String>>() {
             @Override
             public void handle(TableColumn.CellEditEvent<Order, String> orderStringCellEditEvent) {
@@ -33,26 +29,19 @@ public class OrderTableView {
                 order.setCustName(orderStringCellEditEvent.getNewValue());
             }
         });
-        itemOrdered.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Order, String>>() {
-            @Override
-            public void handle(TableColumn.CellEditEvent<Order, String> orderStringCellEditEvent) {
-                Order order = orderStringCellEditEvent.getRowValue();
-                order.setItemOrdered(orderStringCellEditEvent.getNewValue());
-            }
+        //Kod ovan kan skrivas som LAMBDA
+        itemOrdered.setOnEditCommit(orderStringCellEditEvent -> {
+            Order order = orderStringCellEditEvent.getRowValue();
+            order.setItemOrdered(orderStringCellEditEvent.getNewValue());
         });
-        orderNr.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Order, Integer>>() {
-            @Override
-            public void handle(TableColumn.CellEditEvent<Order, Integer> orderStringCellEditEvent) {
-                Order order = orderStringCellEditEvent.getRowValue();
-                order.setOrderNr(orderStringCellEditEvent.getNewValue());
-            }
+        orderNr.setOnEditCommit(orderStringCellEditEvent -> {
+            Order order = orderStringCellEditEvent.getRowValue();
+            order.setOrderNr(orderStringCellEditEvent.getNewValue());
         });
-        quantity.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Order, Integer>>() {
-            @Override
-            public void handle(TableColumn.CellEditEvent<Order, Integer> orderStringCellEditEvent) {
-                Order order = orderStringCellEditEvent.getRowValue();
-                order.setQuantity(orderStringCellEditEvent.getNewValue());
-            }
+        quantity.setOnEditCommit(orderStringCellEditEvent -> {
+            Order order = orderStringCellEditEvent.getRowValue();
+            order.setQuantity(orderStringCellEditEvent.getNewValue());
         });
+        //---
     }
 }
