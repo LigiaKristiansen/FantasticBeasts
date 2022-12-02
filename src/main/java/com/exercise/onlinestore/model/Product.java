@@ -1,6 +1,7 @@
 package com.exercise.onlinestore.model;
 
 public class Product {
+
     private String name;
     private String imgSrc;
     private double price;
