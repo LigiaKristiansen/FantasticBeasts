@@ -49,3 +49,16 @@
     -fx-background-color: #FFFFFF;
         -fx-background-radius: 30;
 }
+
+.root{
+    -fx-background-color: #313224;
+}
+
+.anchorpane{
+    -fx-background-color: #313224;
+}
+
+.tabpane{
+    -fx-background-color: #313224;
+    -fx-foreground-color: #313224;
+}

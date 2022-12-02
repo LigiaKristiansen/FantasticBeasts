@@ -2,10 +2,14 @@ package com.exercise.onlinestore.main;
 
 
 import com.exercise.onlinestore.model.Product;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -14,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,24 +28,39 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ShopController implements Initializable {
+    private final List<Product> products = new ArrayList<>();
     @FXML
     private VBox chosenProductCard;
     @FXML
     private Label productNameLabel;
     @FXML
     private Label productPriceLabel;
-
     @FXML
     private ImageView productImg;
-
     @FXML
     private ScrollPane scroll;
     @FXML
     private GridPane grid;
-
-    private final List<Product> products = new ArrayList<>();
     private Image image;
     private MyListener myListener;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    //------------------------------------------------------------------
+    //Koden nedan används för att kunna byta scen.
+    //Den byter ut rooten mot den root man namnger.
+    //Stagen sätts till befintlig stag genom att typecasta befintlig källa scen och window till först en node som sen typecastas till en stage.
+    //Nästa kodrad byter din Scen till den nya scenen i Parant root. Raden efter det sätter upp Scenen på din Stage och sen visas allt.
+    public void switchToWindow4(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Window4.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        Window4Application window4Application = new Window4Application();
+    }
+    //------------------------------------------------------------------
 
     private List<Product> getData() {
         List<Product> products = new ArrayList<>();
