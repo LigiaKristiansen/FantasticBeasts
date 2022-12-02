@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="367.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/18"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.Billing2">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.Billing">
    <ImageView fx:id="number" fitHeight="55.0" fitWidth="64.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true"
               preserveRatio="true">
       <Image url="@../img/two-number-round-icon.png"/>
@@ -42,7 +42,7 @@
    <Label layoutX="82.0" layoutY="241.0"
           text="of the fee.  for this delivery option will not be refunded in the event of a return of the"/>
    <Label layoutX="82.0" layoutY="259.0" text="entire order."/>
-   <Button layoutX="213.0" layoutY="299.0" mnemonicParsing="false" onAction="#next" prefHeight="38.0" prefWidth="179.0"
+   <Button layoutX="213.0" layoutY="299.0" mnemonicParsing="false" onAction="#next2" prefHeight="38.0" prefWidth="179.0"
            style="-fx-background-color: #000;" text="Proceed to Next" textFill="#fcfbfb">
       <font>
          <Font name="System Bold" size="14.0"/>
