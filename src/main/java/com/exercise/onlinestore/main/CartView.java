@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class CartView {
 
-    private Parent view;
+    private final Parent view;
 
     public CartView() throws IOException {
         URL fxmlResource = getClass().getResource("/fxml/cart.fxml");

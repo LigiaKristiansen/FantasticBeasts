@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class ShopView {
 
-    private Parent view;
+    private final Parent view;
 
     public ShopView() throws IOException {
         URL fxmlResource = getClass().getResource("/fxml/shop.fxml");

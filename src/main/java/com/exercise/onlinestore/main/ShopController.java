@@ -3,17 +3,12 @@ package com.exercise.onlinestore.main;
 
 import com.exercise.onlinestore.model.Product;
 import javafx.event.ActionEvent;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -24,7 +19,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,8 +28,8 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ShopController implements Initializable {
-    public Label productDescriptionLabel;
     private final List<Product> products = new ArrayList<>();
+    public Label productDescriptionLabel;
     @FXML
     private VBox chosenProductCard;
     @FXML
@@ -50,6 +44,7 @@ public class ShopController implements Initializable {
     private GridPane grid;
     private Image image;
     private MyListener myListener;
+
     private List<Product> getData() {
         List<Product> products = new ArrayList<>();
         Product product;
@@ -179,8 +174,8 @@ public class ShopController implements Initializable {
         addButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                Node sourceComponent = (Node)actionEvent.getSource();
-                String productName = (String)sourceComponent.getUserData();
+                Node sourceComponent = (Node) actionEvent.getSource();
+                String productName = (String) sourceComponent.getUserData();
                 ShoppingCart shoppingCart = ShoppingCart.getINSTANCE();
                 shoppingCart.addProducts(productName);
             }
@@ -195,7 +190,7 @@ public class ShopController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 ItemController itemController = fxmlLoader.getController();
-                itemController.setData(products.get(i),myListener);
+                itemController.setData(products.get(i), myListener);
 
                 if (column == 3) {
                     column = 0;

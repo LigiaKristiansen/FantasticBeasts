@@ -10,11 +10,11 @@ import java.util.Map;
 public class ShoppingCart {
 
     private static ShoppingCart INSTANCE;
-    private final Map<String, CartEntry> entries;
+    //private final Map<String, CartEntry> entries;
 
-    private ShoppingCart() {
+/*    private ShoppingCart() {
         this.entries = new HashMap<>();
-    }
+    }*/
 
     public static ShoppingCart getINSTANCE() {
         if (INSTANCE == null) {
@@ -23,6 +23,10 @@ public class ShoppingCart {
         return INSTANCE;
     }
 
+    public void addProducts(String productName) {
+    }
+
+    /*TODO Skall koden vara kvar?
     public void addProducts(String productName) {
         CartEntry productEntry = entries.get(productName.toUpperCase());
         if (productEntry != null) {
@@ -34,7 +38,9 @@ public class ShoppingCart {
         }
     }
 
-    public void removeProduct(String productName) {
+     */
+
+   /* public void removeProduct(String productName) {
         CartEntry productEntry = entries.get(productName.toUpperCase());
         if (productEntry != null) {
             productEntry.decreaseQuantity();
@@ -60,6 +66,6 @@ public class ShoppingCart {
 
     public List<CartEntry> getEntries() {
         return new ArrayList<>(entries.values());
-    }
+    }*/
 
 }

@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -14,15 +13,14 @@ import java.util.Objects;
 
 public class Main extends Application {
     public static final String CURRENCY = " ʛ";
+    private Stage window;
+
     public static void main(String[] args) {
         Application.launch(args);
     }
 
-    private Stage window;
-
-
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage primaryStage) throws IOException {
 
         //Här kopplas scenen till fxml filen. Programmet för att kunna köra fxml läggs även till.
         //Tidigare: URL fxmlResource = getClass().getResource("/fxml/shop.fxml");

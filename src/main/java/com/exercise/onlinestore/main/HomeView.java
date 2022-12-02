@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class HomeView {
 
-    private Parent view;
+    private final Parent view;
 
     public HomeView() throws IOException {
         URL fxmlResource = getClass().getResource("/fxml/store-ui.fxml");

@@ -11,14 +11,13 @@ import javafx.scene.layout.VBox;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.Currency;
 import java.util.List;
 
 public class CartController {
     @FXML
     private VBox cartPane;
 
-    @FXML
+/*    @FXML
     public void initialize(){
         List<CartEntry> entries = ShoppingCart.getINSTANCE().getEntries();
         cartPane.getChildren().clear();
@@ -29,9 +28,10 @@ public class CartController {
         }
         else{
             Label shoppingCartTitle = new Label("Shopping Cart");
-            cartPane.getChildren().add(shoppingCartTitle);
+            cartPane.getChildren().add(shoppingCartTitle);*/
 
-            for(CartEntry cartEntry:entries){
+/* TODO skall koden vara kvar?
+                for(CartEntry cartEntry:entries){
                 HBox hBox = new HBox();
                 Label productName = new Label(cartEntry.getProduct().getName());
                 hBox.getChildren().add(productName);
@@ -39,7 +39,9 @@ public class CartController {
             }
         }
     }
-    private HBox cartEntryView(CartEntry cartEntry) throws FileNotFoundException{
+
+/* TODO skall koden vara kvar?
+        private HBox cartEntryView(CartEntry cartEntry) throws FileNotFoundException{
         HBox layout = new HBox();
         layout.setAlignment(Pos.CENTER_LEFT);
 
@@ -54,11 +56,11 @@ public class CartController {
         Button plusButton = new Button("+");
         Button minusButton = new Button("-");
 
-        Label price = new Label(String.valueOf(cartEntry.getProduct().getPrice() + Main.CURRENCY));
+        Label price = new Label(cartEntry.getProduct().getPrice() + Main.CURRENCY);
 
         layout.getChildren().addAll(imageView,productName, plusButton, quantity, minusButton, price);
 
 
         return layout;
-    }
+    }*/
 }
