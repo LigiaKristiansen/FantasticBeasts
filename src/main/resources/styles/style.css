@@ -3,6 +3,10 @@
     -fx-background-radius: 100;
 }
 
+.product-view{
+    -fx-background-color: #313224;
+}
+
 .transparent{
     -fx-background-color: rgba(0,0,0,0);
 }
@@ -12,8 +16,8 @@
     -fx-background-radius: 30;
 }
 
-.right-bar{
-    -fx-background-color: #000000 ;
+.left-bar{
+    -fx-background-color: #B2ACAA ;
 }
 
 .shadow{
@@ -35,8 +39,8 @@
     -fx-background-radius: 100;
 }
 
-.free-delivery-card{
-    -fx-background-color: #D3D3D3;
+.delivery-card{
+    -fx-background-color: #B2ACAA;
     -fx-background-radius: 30;
 }
 

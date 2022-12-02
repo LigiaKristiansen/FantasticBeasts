@@ -6,7 +6,11 @@ public class Product {
     private String imgSrc;
     private double price;
     private String color;
+    private String description;
 
+    public static Product valueOf(String productName) {
+        return null;
+    }
 
     public String getName() {
         return name;
@@ -39,5 +43,9 @@ public class Product {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public String getDescription() { return description;}
+
+    public void setDescription(String description) { this.description = description; }
 }
 

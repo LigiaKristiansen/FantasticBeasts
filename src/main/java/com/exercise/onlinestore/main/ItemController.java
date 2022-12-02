@@ -10,7 +10,8 @@ import javafx.scene.input.MouseEvent;
 public class ItemController {
     @FXML
     private Label nameLabel;
-
+    @FXML
+    private Label descriptionLabel;
     @FXML
     private Label priceLabel;
 
@@ -31,9 +32,11 @@ public class ItemController {
         this.product = product;
         this.myListener = myListener;
         nameLabel.setText(product.getName());
+        descriptionLabel.setText(product.getDescription());
         priceLabel.setText(product.getPrice() + " " + Main.CURRENCY);
         Image image = new Image(getClass().getResourceAsStream(product.getImgSrc()));
         img.setImage(image);
     }
 }
+
 

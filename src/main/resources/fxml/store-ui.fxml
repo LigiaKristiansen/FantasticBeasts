@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.AppController">
+    <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0">
+         <top>
+            <VBox alignment="CENTER" minHeight="60.0" prefWidth="1315.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="40.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#showHomeView" styleClass="transparent" text="Fantastic Beasts Pet Shop">
+                           <font>
+                              <Font name="Ravie" size="18.0" />
+                           </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Pane prefWidth="150.0" />
+                        <Button mnemonicParsing="false" onAction="#showShopView" styleClass="transparent" text="Shop">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Pane layoutX="380.0" layoutY="10.0" prefWidth="50.0" />
+                        <Button layoutX="805.0" layoutY="16.0" mnemonicParsing="false" onAction="#showEmployeeView" styleClass="transparent" text="For employees">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Pane layoutX="856.0" layoutY="10.0" prefWidth="400.0" />
+                        <Button layoutX="860.0" layoutY="16.0" mnemonicParsing="false" onAction="#showCartView" styleClass="transparent">
+                           <graphic>
+                                <ImageView fx:id="navCart" fitHeight="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/suitcase-outline-icon.png" />
+                                    </image>
+                                </ImageView>
+                           </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                          <Label alignment="CENTER_RIGHT" style="-fx-background-color: #b2adaa;" text="0" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                    <Separator />
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefWidth="450.0" />
+                    <Label prefWidth="750.0" text="The Pet you were looking for but could not find anywhere else" textAlignment="CENTER" wrapText="true">
+                        <font>
+                            <Font name="Snap ITC" size="40.0" />
+                        </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                    </Label>
+                    <ImageView fx:id="logo" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../img/Doxy_home.png" />
+                        </image>
+                    </ImageView>
+                  <HBox alignment="CENTER">
+                     <children>
+                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="400.0" text="Welcome to Fantastic Beasts Pet Shop" wrapText="true">
+                              <font>
+                                  <Font name="Snap ITC" size="36.0" />
+                              </font>
+                          </Label>
+                        <Pane prefWidth="500.0" />
+                          <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" text="If you were looking for a friend for life, you came to the right place. At Fantastic Beasts Pet Shop you will find the most amazing magical creatures .Take a look at our selection and choose the one that suits you best." textAlignment="RIGHT" wrapText="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="25.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+    </children>
+</AnchorPane>

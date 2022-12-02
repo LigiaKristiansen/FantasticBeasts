@@ -6,23 +6,27 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 
 
 public class Main extends Application {
-    public static final String CURRENCY = " kr";
-
+    public static final String CURRENCY = " ʛ";
     public static void main(String[] args) {
         Application.launch(args);
     }
 
+    private Stage window;
+
+
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage stage) throws IOException {
 
         //Här kopplas scenen till fxml filen. Programmet för att kunna köra fxml läggs även till.
-        URL fxmlResource = getClass().getResource("/fxml/shop.fxml");
+        //Tidigare: URL fxmlResource = getClass().getResource("/fxml/shop.fxml");
+        URL fxmlResource = getClass().getResource("/fxml/store-ui.fxml");
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(fxmlResource);
         Parent root = loader.load();

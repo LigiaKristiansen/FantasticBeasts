@@ -1,213 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.ShopController">
-    <BorderPane layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.ShopController">
+    <BorderPane layoutX="6.0" minHeight="810.0" minWidth="1315.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <left>
-            <VBox prefHeight="200.0" prefWidth="435.0" styleClass="right-bar" BorderPane.alignment="CENTER">
-                <HBox alignment="CENTER" prefHeight="110.0" prefWidth="200.0">
-                    <Label prefHeight="49.0" prefWidth="128.0" text="Fruits" textFill="#878787">
-                        <font>
-                            <Font name="Cambria Bold" size="40.0" />
-                        </font>
-                    </Label>
-                    <Label text="Market" textFill="#878787">
-                        <font>
-                            <Font name="Cambria" size="40.0" />
-                        </font>
-                    </Label>
-                </HBox>
-                <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0" VBox.vgrow="NEVER">
-                    <VBox.margin>
-                        <Insets left="30.0" right="30.0" />
-                    </VBox.margin>
-                    <styleClass>
-                        <String fx:value="search-box" />
-                        <String fx:value="shadow" />
-                    </styleClass>
-                    <TextField prefHeight="40.0" prefWidth="235.0" promptText="Type here to search" styleClass="transparent">
-                        <HBox.margin>
-                            <Insets left="20.0" />
-                        </HBox.margin>
-                        <font>
-                            <Font name="Cambria" size="18.0" />
-                        </font>
-                    </TextField>
-                    <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" styleClass="search-button" text="Search" textFill="WHITE" />
-                </HBox>
-                <Pane prefHeight="57.0" prefWidth="435.0" VBox.vgrow="ALWAYS" />
-                <VBox fx:id="chosenProductCard" alignment="CENTER" prefHeight="535.0" prefWidth="100.0">
+            <VBox alignment="CENTER" minWidth="-Infinity" prefWidth="435.0" styleClass="left-bar" BorderPane.alignment="CENTER">
+                 <Label alignment="CENTER" contentDisplay="CENTER" text="Pick a Beast" textFill="#313224">
+                     <font>
+                         <Font name="Ravie" size="36.0" />
+                     </font>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+                 </Label>
+                <VBox fx:id="chosenProductCard" alignment="CENTER" prefHeight="650.0">
                     <VBox.margin>
                         <Insets left="50.0" right="50.0" />
                     </VBox.margin>
                     <styleClass>
-                        <String fx:value="chosen-fruit-card" />
+                        <String fx:value="chosen-product-card" />
                         <String fx:value="shadow" />
                     </styleClass>
-                    <HBox prefHeight="60.0" prefWidth="335.0">
+                    <ImageView fx:id="productImg" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                         <VBox.margin>
-                            <Insets left="20.0" top="30.0" />
-                        </VBox.margin>
-                        <Label fx:id="productNameLabel" prefHeight="48.0" prefWidth="276.0" text="Peach" textFill="WHITE">
-                            <font>
-                                <Font name="Cambria" size="36.0" />
-                            </font>
-                        </Label>
-                        <Label fx:id="productPriceLabel" prefHeight="57.0" prefWidth="171.0" text="\$2.99" textFill="WHITE">
-                            <font>
-                                <Font name="Cambria" size="36.0" />
-                            </font>
-                        </Label>
-                    </HBox>
-                    <ImageView fx:id="productImg" fitHeight="170.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
-                        <VBox.margin>
-                            <Insets top="20.0" />
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="50.0" />
                         </VBox.margin>
                         <Image url="@../img/Bowtruckle.png" />
                     </ImageView>
-                    <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0">
+                    <Label fx:id="productNameLabel" alignment="CENTER" prefHeight="50.0" prefWidth="420.0" text="Bowtruckle" textFill="WHITE">
+                        <font>
+                            <Font name="Arial" size="24.0" />
+                        </font>
+                    </Label>
+               <Label fx:id="productDescriptionLabel" alignment="CENTER" layoutX="10.0" layoutY="436.0" prefHeight="160.0" text="The tiny, hand-sized Bowtruckles dwell within trees and, due to to their stick-like appearance, can camouflage into their environment. These creatures are also expert lock-pickers, which makes them useful pets to have." textFill="WHITE" visible="false" wrapText="true">
+                  <font>
+                     <Font name="Arial" size="13.0" />
+                  </font>
+                  <padding>
+                     <Insets bottom="1.0" left="30.0" right="30.0" top="1.0" />
+                  </padding>
+               </Label>
+                    <Label fx:id="productPriceLabel" alignment="CENTER" text="20000.00" textAlignment="CENTER" textFill="WHITE">
+                        <font>
+                            <Font name="Arial" size="18.0" />
+                        </font>
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+                    </Label>
+                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" text="ADD TO SUITCASE" textFill="#828282">
                         <VBox.margin>
-                            <Insets top="20.0" />
-                        </VBox.margin>
-                        <Label prefHeight="53.0" prefWidth="167.0" text="Kg" textFill="WHITE">
-                            <font>
-                                <Font name="Cambria" size="24.0" />
-                            </font>
-                        </Label>
-                        <ComboBox prefHeight="45.0" prefWidth="130.0" promptText="1" styleClass="comboBox" />
-                    </HBox>
-                    <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
-                        <VBox.margin>
-                            <Insets bottom="20.0" top="20.0" />
-                        </VBox.margin>
-                        <Separator prefHeight="0.0" prefWidth="118.0" />
-                        <Label alignment="CENTER" prefHeight="45.0" prefWidth="64.0" text="or" textFill="WHITE">
-                            <font>
-                                <Font name="Cambria" size="24.0" />
-                            </font>
-                        </Label>
-                        <Separator prefHeight="0.0" prefWidth="118.0" />
-                    </HBox>
-                    <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0">
-                        <Label prefHeight="53.0" prefWidth="167.0" text="Kg" textFill="WHITE">
-                            <font>
-                                <Font name="Cambria" size="24.0" />
-                            </font>
-                        </Label>
-                        <ComboBox prefHeight="45.0" prefWidth="130.0" promptText="selected" styleClass="comboBox" />
-                    </HBox>
-                    <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" text="ADD TO CART" textFill="#828282">
-                        <VBox.margin>
-                            <Insets bottom="20.0" top="30.0" />
+                            <Insets bottom="20.0" top="10.0" />
                         </VBox.margin>
                         <font>
                             <Font name="System Bold" size="18.0" />
                         </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
                     </Button>
+                    <VBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="20.0" />
+                    </VBox.margin>
                 </VBox>
-                <Pane prefHeight="57.0" prefWidth="435.0" VBox.vgrow="ALWAYS" />
+            <BorderPane.margin>
+               <Insets />
+            </BorderPane.margin>
             </VBox>
         </left>
         <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-                <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0">
+            <VBox alignment="CENTER" styleClass="product-view" BorderPane.alignment="CENTER">
+                <HBox alignment="TOP_RIGHT">
                     <VBox.margin>
-                        <Insets left="20.0" right="20.0" />
+                        <Insets />
                     </VBox.margin>
-                    <Label prefHeight="29.0" prefWidth="88.0" text="language" textFill="#878787">
-                        <font>
-                            <Font name="Cambria Bold" size="18.0" />
-                        </font>
-                    </Label>
-                    <Label prefHeight="29.0" prefWidth="77.0" text="English" textFill="#878787" underline="true">
-                        <font>
-                            <Font name="Cambria" size="18.0" />
-                        </font>
-                    </Label>
-                    <Pane prefHeight="65.0" prefWidth="393.0" HBox.hgrow="ALWAYS" />
-                    <Label prefHeight="62.0" prefWidth="100.0" text="My Account" textFill="#878787">
-                        <font>
-                            <Font name="Cambria" size="18.0" />
-                        </font>
-                    </Label>
-                    <ImageView fitHeight="50.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../img/cart-icon.png" />
-                    </ImageView>
-                </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0">
-                    <VBox.margin>
-                        <Insets left="20.0" right="20.0" top="10.0" />
-                    </VBox.margin>
-                    <Pane prefHeight="84.0" prefWidth="96.0" />
-                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="380.0" styleClass="free-delivery-card">
-                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="214.0">
-                            <Label prefHeight="29.0" prefWidth="190.0" text="Free delivery" textFill="#878787">
-                                <font>
-                                    <Font name="Cambria Bold" size="18.0" />
-                                </font>
-                            </Label>
-                            <Label prefHeight="16.0" prefWidth="190.0" text="over $20 order" textFill="#878787">
-                                <font>
-                                    <Font name="Cambria" size="15.0" />
-                                </font>
-                            </Label>
-                        </VBox>
-                        <ImageView fitHeight="49.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
-                            <Image url="@../img/delivery-truck-icon.png" />
-                        </ImageView>
-                    </HBox>
-                    <Pane prefHeight="84.0" prefWidth="96.0" HBox.hgrow="ALWAYS" />
-                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="336.0" styleClass="shopping-online-card">
-                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="203.0">
-                            <Label prefHeight="29.0" prefWidth="190.0" text="Shopping online" textFill="#878787">
-                                <font>
-                                    <Font name="Cambria Bold" size="18.0" />
-                                </font>
-                            </Label>
-                            <Label prefHeight="20.0" prefWidth="207.0" text="get your shopping in same day" textFill="#878787">
-                                <font>
-                                    <Font name="Cambria" size="15.0" />
-                                </font>
-                            </Label>
-                        </VBox>
-                        <ImageView fitHeight="49.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                    <HBox alignment="CENTER" prefWidth="250.0" styleClass="delivery-card">
+                         <Label prefHeight="30.0" prefWidth="180.0" text="Instant portkey delivery" textFill="#006400">
+                             <font>
+                                 <Font name="Arial Bold" size="14.0" />
+                             </font>
+                         </Label>
+                        <ImageView fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                             <Image url="@../img/monster-cartoon-icon.png" />
+                     <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </HBox.margin>
                         </ImageView>
+                  <HBox.margin>
+                     <Insets bottom="10.0" right="20.0" top="15.0" />
+                  </HBox.margin>
                     </HBox>
-                    <Pane prefHeight="84.0" prefWidth="96.0" />
                 </HBox>
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                    <ScrollPane fx:id="scroll" prefHeight="570.0" prefWidth="785.0" styleClass="transparent">
-                        <HBox.margin>
-                            <Insets top="10.0" />
-                        </HBox.margin>
-                        <GridPane fx:id="grid" prefHeight="0.0" prefWidth="0.0">
+            <HBox alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="29.0" text="Meet Our Pets" textFill="WHITE">
+                     <font>
+                        <Font name="Ravie" size="30.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
+                <VBox fillWidth="false" styleClass="product-view" VBox.vgrow="ALWAYS">
+                    <ScrollPane fx:id="scroll" fitToHeight="true" fitToWidth="true" styleClass="product-view">
+                        <GridPane fx:id="grid" alignment="CENTER" styleClass="product-view">
                             <rowConstraints>
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" />
                             </rowConstraints>
                         </GridPane>
                     </ScrollPane>
-                </HBox>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+                </VBox>
             </VBox>
         </center>
     </BorderPane>
-    <Button mnemonicParsing="false" onAction="#switchToWindow4" text="TEST BUTTON" />
 </AnchorPane>
