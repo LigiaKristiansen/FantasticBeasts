@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,7 +19,10 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class Window4Controller implements Initializable {
-
+    @FXML
+    public Button addRow;
+    @FXML
+    public Button deleteRow;
     @FXML
     TableColumn<Order, String> customerName;
 
@@ -48,13 +52,8 @@ public class Window4Controller implements Initializable {
 
     @FXML
     TableView<Stock> tableViewStock;
-
-
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-
     OrderTableView orderTableView = new OrderTableView();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -65,6 +64,9 @@ public class Window4Controller implements Initializable {
         tableViewOrder.getItems().add(new Order("Björn Börjesson", 2, "Flopperflopp", 1));
         tableViewOrder.getItems().add(new Order("Calle Capten", 3, "Dobe", 1));
         tableViewOrder.getItems().add(new Order("Daniel Dinerso", 4, "WoopWoop", 1));
+
+        addRow.setOnAction(event -> tableViewOrder.getItems().add(new Order("", 0, "", 0)));
+        deleteRow.setOnAction(event -> tableViewOrder.getItems().removeAll(tableViewOrder.getSelectionModel().getSelectedItems()));
     }
 
     //Koden nedan används för att kunna byta scen.
@@ -73,8 +75,8 @@ public class Window4Controller implements Initializable {
     //Nästa kodrad byter din Scen till den nya scenen i Parant root. Raden efter det sätter upp Scenen på din Stage och sen visas allt.
     public void switchToWindowShop(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/shop.fxml")));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
