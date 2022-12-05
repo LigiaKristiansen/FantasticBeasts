@@ -1,5 +1,6 @@
 package com.exercise.onlinestore.main;
 
+import com.exercise.onlinestore.model.Product;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,39 +28,35 @@ public class Window4Controller implements Initializable {
     TableColumn<Order, String> customerName;
 
     @FXML
-    TableColumn<Stock, Integer> inStock;
-
+    TableColumn<Product, Integer> inStock;
     @FXML
-    TableColumn<Stock, String> item;
-
+    TableColumn<Product, String> name;
     @FXML
     TableColumn<Order, String> itemOrdered;
-
     @FXML
     MenuItem loadStockCsv;
-
     @FXML
     TableColumn<Order, Integer> orderNr;
-
     @FXML
     TableColumn<Order, Integer> quantity;
-
     @FXML
     MenuItem saveStockCsv;
-
     @FXML
     TableView<Order> tableViewOrder;
-
     @FXML
-    TableView<Stock> tableViewStock;
+    TableView<Product> tableViewStock;
     OrderTable orderTable = new OrderTable();
     StockTable stockTable = new StockTable();
+    @FXML
+    private TableColumn<Product, String> description;
+    @FXML
+    private TableColumn<Product, Double> price;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         orderTable.InitializeOrderTable(customerName, itemOrdered, orderNr, quantity);
-        stockTable.InitializeStockTable(item,inStock);
+        stockTable.InitializeStockTable(name, price, description, inStock);
 
         //Bara random värden som läggs in i tabellen
         tableViewOrder.getItems().add(new Order("Axel Axelsson", 1, "Huffelpuff", 1));
@@ -67,7 +64,7 @@ public class Window4Controller implements Initializable {
         tableViewOrder.getItems().add(new Order("Calle Capten", 3, "Dobe", 1));
         tableViewOrder.getItems().add(new Order("Daniel Dinerso", 4, "WoopWoop", 1));
 
-        addRow.setOnAction(event -> tableViewStock.getItems().add(new Stock("", 0)));
+        addRow.setOnAction(event -> tableViewStock.getItems().add(new Product("", 0, "", 0)));
         deleteRow.setOnAction(event -> tableViewStock.getItems().removeAll(tableViewStock.getSelectionModel().getSelectedItems()));
     }
 

@@ -7,10 +7,10 @@ public class Order {
     private Integer quantity;
 
     public Order(){
-        this.custName = "";
+/*        this.custName = "";
         this.orderNr = 0;
         this.itemOrdered = "";
-        this.quantity = 0;
+        this.quantity = 0;*/
     }
 
     public Order(String custName, Integer orderNr, String item, Integer quantity) {
