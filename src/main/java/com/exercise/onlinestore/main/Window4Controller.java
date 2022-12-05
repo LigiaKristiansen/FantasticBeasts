@@ -52,12 +52,14 @@ public class Window4Controller implements Initializable {
 
     @FXML
     TableView<Stock> tableViewStock;
-    OrderTableView orderTableView = new OrderTableView();
+    OrderTable orderTable = new OrderTable();
+    StockTable stockTable = new StockTable();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        orderTableView.InitializeOrderTableView(customerName, itemOrdered, orderNr, quantity);
+        orderTable.InitializeOrderTable(customerName, itemOrdered, orderNr, quantity);
+        stockTable.InitializeStockTable(item,inStock);
 
         //Bara random värden som läggs in i tabellen
         tableViewOrder.getItems().add(new Order("Axel Axelsson", 1, "Huffelpuff", 1));
@@ -65,8 +67,8 @@ public class Window4Controller implements Initializable {
         tableViewOrder.getItems().add(new Order("Calle Capten", 3, "Dobe", 1));
         tableViewOrder.getItems().add(new Order("Daniel Dinerso", 4, "WoopWoop", 1));
 
-        addRow.setOnAction(event -> tableViewOrder.getItems().add(new Order("", 0, "", 0)));
-        deleteRow.setOnAction(event -> tableViewOrder.getItems().removeAll(tableViewOrder.getSelectionModel().getSelectedItems()));
+        addRow.setOnAction(event -> tableViewStock.getItems().add(new Stock("", 0)));
+        deleteRow.setOnAction(event -> tableViewStock.getItems().removeAll(tableViewStock.getSelectionModel().getSelectedItems()));
     }
 
     //Koden nedan används för att kunna byta scen.

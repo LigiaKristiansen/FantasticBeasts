@@ -6,9 +6,9 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.IntegerStringConverter;
 
 
-public class OrderTableView {
+public class OrderTable {
 
-    public void InitializeOrderTableView(TableColumn<Order, String> customerName, TableColumn<Order, String> itemOrdered, TableColumn<Order, Integer> orderNr, TableColumn<Order, Integer> quantity) {
+    public void InitializeOrderTable(TableColumn<Order, String> customerName, TableColumn<Order, String> itemOrdered, TableColumn<Order, Integer> orderNr, TableColumn<Order, Integer> quantity) {
         //Här initieras de olika cellerna så de kan ta emot data.
         customerName.setCellValueFactory(new PropertyValueFactory<>("custName"));
         itemOrdered.setCellValueFactory(new PropertyValueFactory<>("itemOrdered"));
