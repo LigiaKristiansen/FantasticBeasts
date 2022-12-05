@@ -34,7 +34,7 @@ public class Billing {
     public void next1(ActionEvent event) {
         try {
 
-            Parent home_page_parent = FXMLLoader.load(getClass().getResource("/fxml/Billing_1.fxml"));
+            Parent home_page_parent = FXMLLoader.load(getClass().getResource("/fxml/Billing_2.fxml"));
 
             Scene home_page_scene = new Scene(home_page_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -51,7 +51,7 @@ public class Billing {
     public void next2(ActionEvent event) {
         try {
 
-            Parent home_page_parent = FXMLLoader.load(getClass().getResource("/fxml/Billing_2.fxml"));
+            Parent home_page_parent = FXMLLoader.load(getClass().getResource("/fxml/Billing_3.fxml"));
 
             Scene home_page_scene = new Scene(home_page_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -82,8 +82,7 @@ public class Billing {
 
     public void nextVisitor(ActionEvent event) {
         try {
-
-            Parent home_page_parent = FXMLLoader.load(getClass().getResource("/fxml/View_Visitor.fxml"));
+            Parent home_page_parent = FXMLLoader.load(getClass().getResource("/fxml/Billing_1.fxml"));
 
             Scene home_page_scene = new Scene(home_page_parent);
             Stage app_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
