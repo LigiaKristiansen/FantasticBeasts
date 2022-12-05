@@ -8,10 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,6 +21,8 @@ public class Window4Controller implements Initializable {
     public Button addRow;
     @FXML
     public Button deleteRow;
+    public Tab stockTab;
+    public Tab orderTab;
     @FXML
     TableColumn<Order, String> customerName;
 
@@ -47,11 +46,19 @@ public class Window4Controller implements Initializable {
     TableView<Product> tableViewStock;
     OrderTable orderTable = new OrderTable();
     StockTable stockTable = new StockTable();
+    ShopController shopController = new ShopController();
     @FXML
     private TableColumn<Product, String> description;
     @FXML
     private TableColumn<Product, Double> price;
-
+    private void StockAddDelete() {
+        addRow.setOnAction(event -> tableViewStock.getItems().add(new Product("", 0, "", 0)));
+        deleteRow.setOnAction(event -> tableViewStock.getItems().removeAll(tableViewStock.getSelectionModel().getSelectedItems()));
+    }
+    private void OrderAddDelete(){
+        addRow.setOnAction(event -> tableViewOrder.getItems().add(new Order("", 0, "", 0)));
+        deleteRow.setOnAction(event -> tableViewOrder.getItems().removeAll(tableViewOrder.getSelectionModel().getSelectedItems()));
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -64,8 +71,18 @@ public class Window4Controller implements Initializable {
         tableViewOrder.getItems().add(new Order("Calle Capten", 3, "Dobe", 1));
         tableViewOrder.getItems().add(new Order("Daniel Dinerso", 4, "WoopWoop", 1));
 
-        addRow.setOnAction(event -> tableViewStock.getItems().add(new Product("", 0, "", 0)));
-        deleteRow.setOnAction(event -> tableViewStock.getItems().removeAll(tableViewStock.getSelectionModel().getSelectedItems()));
+        tableViewStock.getItems().addAll(shopController.getData());
+        StockAddDelete();
+        stockTab.setOnSelectionChanged(event -> {
+            if (stockTab.isSelected()) {
+                StockAddDelete();
+            }
+        });
+        orderTab.setOnSelectionChanged(eventTab -> {
+            if (orderTab.isSelected()) {
+                OrderAddDelete();
+            }
+        });
     }
 
     //Koden nedan används för att kunna byta scen.
