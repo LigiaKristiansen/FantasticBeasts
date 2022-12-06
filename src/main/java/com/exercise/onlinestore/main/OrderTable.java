@@ -1,5 +1,6 @@
 package com.exercise.onlinestore.main;
 
+import javafx.event.EventHandler;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -22,9 +23,12 @@ public class OrderTable {
         orderNr.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         quantity.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         //---För att kunna redigera informationen i cellerna.
-        customerName.setOnEditCommit(orderStringCellEditEvent -> {
-            Order order = orderStringCellEditEvent.getRowValue();
-            order.setCustName(orderStringCellEditEvent.getNewValue());
+        customerName.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Order, String>>() {
+            @Override
+            public void handle(TableColumn.CellEditEvent<Order, String> orderStringCellEditEvent) {
+                Order order = orderStringCellEditEvent.getRowValue();
+                order.setCustName(orderStringCellEditEvent.getNewValue());
+            }
         });
         //Kod ovan kan skrivas som LAMBDA
         itemOrdered.setOnEditCommit(orderStringCellEditEvent -> {

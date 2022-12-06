@@ -66,10 +66,10 @@ public class Window4Controller implements Initializable {
         stockTable.InitializeStockTable(name, price, description, inStock);
 
         //Bara random värden som läggs in i tabellen
-        tableViewOrder.getItems().add(new Order("Axel Axelsson", 1, "Huffelpuff", 1));
-        tableViewOrder.getItems().add(new Order("Björn Börjesson", 2, "Flopperflopp", 1));
-        tableViewOrder.getItems().add(new Order("Calle Capten", 3, "Dobe", 1));
-        tableViewOrder.getItems().add(new Order("Daniel Dinerso", 4, "WoopWoop", 1));
+        tableViewOrder.getItems().add(new Order("Axel Axelsson", 1, "Zouwu", 1));
+        tableViewOrder.getItems().add(new Order("Björn Börjesson", 2, "Thunderbird", 1));
+        tableViewOrder.getItems().add(new Order("Calle Capten", 3, "SwoopingEvil", 1));
+        tableViewOrder.getItems().add(new Order("Daniel Dinerso", 4, "Occamy", 1));
 
         tableViewStock.getItems().addAll(shopController.getData());
         StockAddDelete();

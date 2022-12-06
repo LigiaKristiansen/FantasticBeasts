@@ -29,7 +29,10 @@ public class Order {
     }
 
     public void setOrderNr(Integer orderNr) {
-        this.orderNr = orderNr;
+        if (orderNr >= 0)
+            this.orderNr = orderNr;
+        else
+            throw new IllegalArgumentException("Order number must be a positive value.");
     }
 
     public String getItemOrdered() {
