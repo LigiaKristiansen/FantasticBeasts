@@ -6,7 +6,7 @@ public class Order {
     private String itemOrdered;
     private Integer quantity;
 
-    public Order(){
+    public Order() {
     }
 
     public Order(String custName, Integer orderNr, String item, Integer quantity) {
@@ -21,7 +21,10 @@ public class Order {
     }
 
     public void setCustName(String custName) {
-        this.custName = custName;
+        if (custName != null)
+            this.custName = custName;
+        else
+            throw new IllegalArgumentException("Costumer name must contain a value.");
     }
 
     public Integer getOrderNr() {

@@ -51,14 +51,17 @@ public class Window4Controller implements Initializable {
     private TableColumn<Product, String> description;
     @FXML
     private TableColumn<Product, Double> price;
+
     private void StockAddDelete() {
         addRow.setOnAction(event -> tableViewStock.getItems().add(new Product("", 0, "", 0)));
         deleteRow.setOnAction(event -> tableViewStock.getItems().removeAll(tableViewStock.getSelectionModel().getSelectedItems()));
     }
-    private void OrderAddDelete(){
+
+    private void OrderAddDelete() {
         addRow.setOnAction(event -> tableViewOrder.getItems().add(new Order("", 0, "", 0)));
         deleteRow.setOnAction(event -> tableViewOrder.getItems().removeAll(tableViewOrder.getSelectionModel().getSelectedItems()));
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -95,5 +98,15 @@ public class Window4Controller implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void CellOrderNrCommit(TableColumn.CellEditEvent<Order, Integer> orderIntegerCellEditEvent) {
+        if (tableViewOrder.getItems().stream().equals(orderIntegerCellEditEvent.getNewValue() <)) {
+            return;
+        } else {
+            System.out.println("Value is not unique.");
+
+        }
+
     }
 }
