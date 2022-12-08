@@ -1,12 +1,15 @@
 package com.exercise.onlinestore.main;
 
+import javafx.scene.control.Label;
+
 public class Order {
     private String custName;
     private Integer orderNr;
     private String itemOrdered;
     private Integer quantity;
+    private Integer price;
 
-    public Order(){
+    public Order(Label productNameLabel, Integer numOfItemsAdded) {
     }
 
     public Order(String custName, Integer orderNr, String item, Integer quantity) {
@@ -14,6 +17,24 @@ public class Order {
         this.orderNr = orderNr;
         this.itemOrdered = item;
         this.quantity = quantity;
+    }
+
+    public Order(String itemOrdered, Integer quantity, Integer price) {
+        this.itemOrdered = itemOrdered;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    public Order() {
+
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     public String getCustName() {
