@@ -22,17 +22,17 @@ public class AppController {
     private Parent root;
 
     public void showHomeView(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/store-ui.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/store-ui.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
     public void showShopView(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
