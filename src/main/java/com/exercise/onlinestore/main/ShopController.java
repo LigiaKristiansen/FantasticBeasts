@@ -15,9 +15,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -77,7 +76,7 @@ public class ShopController implements Initializable {
         stage.show();
     }
 
-    private List<Product> getData() {
+    public List<Product> getData() {
         List<Product> products = new ArrayList<>();
 
 
