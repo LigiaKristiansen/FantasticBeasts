@@ -1,6 +1,5 @@
 package com.exercise.onlinestore.main;
 
-
 import com.exercise.onlinestore.model.Product;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,16 +8,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -45,8 +43,40 @@ public class ShopController implements Initializable {
     private Image image;
     private MyListener myListener;
 
+    @FXML
+    private Button addButton;
+
+    @FXML
+    BorderPane contentPane;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    public void showHomeView(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/store-ui.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void showShopView(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void showCartView(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/cart.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     private List<Product> getData() {
         List<Product> products = new ArrayList<>();
+
         Product product;
 
         product = new Product();
@@ -154,6 +184,17 @@ public class ShopController implements Initializable {
         image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(product.getImgSrc())));
         productImg.setImage(image);
         chosenProductCard.setStyle("-fx-background-color: #" + product.getColor() + ";\n" + "    -fx-background-radius: 30;");
+        addButton.setText("ADD TO SUITCASE");
+        addButton.setUserData(productNameLabel);
+        addButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Node sourceComponent = (Node) actionEvent.getSource();
+                String productNameLabel = (String) sourceComponent.getUserData();
+                ShoppingCart shoppingCart = ShoppingCart.getINSTANCE();
+                shoppingCart.addProducts(productNameLabel);
+            }
+        });
     }
 
     @Override
@@ -165,21 +206,9 @@ public class ShopController implements Initializable {
                 @Override
                 public void onClickListener(Product product) {
                     setChosenProduct(product);
-
                 }
             };
         }
-        Button addButton = new Button("ADD TO SUITCASE");
-        addButton.setUserData(productNameLabel);
-        addButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                Node sourceComponent = (Node) actionEvent.getSource();
-                String productName = (String) sourceComponent.getUserData();
-                ShoppingCart shoppingCart = ShoppingCart.getINSTANCE();
-                shoppingCart.addProducts(productName);
-            }
-        });
 
         int column = 0;
         int row = 1;
@@ -213,9 +242,5 @@ public class ShopController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-    }
-
-    public void showCartView(MouseEvent mouseEvent) {
     }
 }

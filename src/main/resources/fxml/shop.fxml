@@ -4,8 +4,10 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.ShopController">
@@ -55,7 +57,7 @@
                      <Insets />
                   </VBox.margin>
                     </Label>
-                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" text="ADD TO SUITCASE" textFill="#828282">
+                    <Button fx:id="addButton"   prefHeight="50.0" prefWidth="270.0" styleClass="add-btn" textFill="#828282">
                         <VBox.margin>
                             <Insets bottom="20.0" top="10.0" />
                         </VBox.margin>
@@ -65,6 +67,13 @@
                         <cursor>
                             <Cursor fx:constant="HAND" />
                         </cursor>
+                  <effect>
+                     <InnerShadow>
+                        <color>
+                           <Color red="0.3700000047683716" green="0.3700000047683716" blue="0.3700000047683716" opacity="0.8952054977416992" />
+                        </color>
+                     </InnerShadow>
+                  </effect>
                     </Button>
                     <VBox.margin>
                         <Insets bottom="25.0" left="25.0" right="25.0" top="20.0" />
@@ -120,5 +129,62 @@
                 </VBox>
             </VBox>
         </center>
+        <top>
+            <VBox alignment="CENTER" minHeight="60.0" prefWidth="1315.0" BorderPane.alignment="CENTER">
+                <children>
+                    <HBox alignment="CENTER" prefHeight="40.0">
+                        <children>
+                            <Button mnemonicParsing="false" onAction="#showHomeView" styleClass="transparent" text="Fantastic Beasts Pet Shop">
+                                <font>
+                                    <Font name="Ravie" size="18.0" />
+                                </font>
+                                <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                </cursor>
+                            </Button>
+                            <Pane prefWidth="150.0" />
+                            <Button mnemonicParsing="false" onAction="#showShopView" styleClass="transparent" text="Shop">
+                                <font>
+                                    <Font name="Arial" size="16.0" />
+                                </font>
+                                <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                </cursor>
+                            </Button>
+                            <Pane layoutX="380.0" layoutY="10.0" prefWidth="50.0" />
+                            <Button layoutX="805.0" layoutY="16.0" mnemonicParsing="false" styleClass="transparent" text="For employees">
+                                <font>
+                                    <Font name="Arial" size="16.0" />
+                                </font>
+                                <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                </cursor>
+                            </Button>
+                            <Pane layoutX="856.0" layoutY="10.0" prefWidth="400.0" />
+                            <Button layoutX="860.0" layoutY="16.0" mnemonicParsing="false" onAction="#showCartView" styleClass="transparent">
+                                <graphic>
+                                    <ImageView fx:id="navCart" fitHeight="25.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../img/suitcase-outline-icon.png" />
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                                <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                </cursor>
+                            </Button>
+                            <Label alignment="CENTER_RIGHT" style="-fx-background-color: #b2adaa;" text="0" />
+                        </children>
+                        <HBox.margin>
+                            <Insets left="20.0" right="20.0" top="20.0" />
+                        </HBox.margin>
+                        <VBox.margin>
+                            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                        </VBox.margin>
+                    </HBox>
+                    <Separator />
+                </children>
+            </VBox>
+        </top>
     </BorderPane>
 </AnchorPane>
