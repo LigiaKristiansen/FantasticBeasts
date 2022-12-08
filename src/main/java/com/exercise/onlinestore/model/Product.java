@@ -7,9 +7,28 @@ public class Product {
     private double price;
     private String color;
     private String description;
+    private Integer inStock;
+
+    public Product(String name, double price, String description, Integer inStock) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.inStock = inStock;
+    }
+
+    public Product() {
+    }
 
     public static Product valueOf(String productName) {
         return null;
+    }
+
+    public Integer getInStock() {
+        return inStock;
+    }
+
+    public void setInStock(Integer inStock) {
+        this.inStock = inStock;
     }
 
     public String getName() {
@@ -44,8 +63,12 @@ public class Product {
         this.color = color;
     }
 
-    public String getDescription() { return description;}
+    public String getDescription() {
+        return description;
+    }
 
-    public void setDescription(String description) { this.description = description; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
 

@@ -7,10 +7,6 @@ public class Order {
     private Integer quantity;
 
     public Order(){
-        this.custName = "";
-        this.orderNr = 0;
-        this.itemOrdered = "";
-        this.quantity = 0;
     }
 
     public Order(String custName, Integer orderNr, String item, Integer quantity) {
@@ -33,7 +29,10 @@ public class Order {
     }
 
     public void setOrderNr(Integer orderNr) {
-        this.orderNr = orderNr;
+        if (orderNr >= 0)
+            this.orderNr = orderNr;
+        else
+            throw new IllegalArgumentException("Order number must be a positive value.");
     }
 
     public String getItemOrdered() {

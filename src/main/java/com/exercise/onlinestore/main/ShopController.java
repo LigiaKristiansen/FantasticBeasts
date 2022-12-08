@@ -15,7 +15,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
 import javafx.scene.layout.*;
+
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,7 +28,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ShopController implements Initializable {
-    private final List<Product> products = new ArrayList<>();
+    public List<Product> products = new ArrayList<>();
     public Label productDescriptionLabel;
     @FXML
     private VBox chosenProductCard;
@@ -42,6 +44,7 @@ public class ShopController implements Initializable {
     private GridPane grid;
     private Image image;
     private MyListener myListener;
+
 
     @FXML
     private Button addButton;
@@ -76,6 +79,7 @@ public class ShopController implements Initializable {
 
     private List<Product> getData() {
         List<Product> products = new ArrayList<>();
+
 
         Product product;
 
@@ -176,7 +180,6 @@ public class ShopController implements Initializable {
         return products;
     }
 
-
     private void setChosenProduct(Product product) {
         productNameLabel.setText(product.getName());
         productDescriptionLabel.setText(product.getDescription());
@@ -242,5 +245,17 @@ public class ShopController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+    public void win4(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Window4.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void showCartView(MouseEvent mouseEvent) {
+
     }
 }
