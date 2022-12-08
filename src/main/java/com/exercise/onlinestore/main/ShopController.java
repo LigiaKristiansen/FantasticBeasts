@@ -76,7 +76,6 @@ public class ShopController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     public Map<String, Order> cartAdd() {
         if (productMap.containsKey(String.valueOf(productNameLabel))) {
             addOrder.setItemOrdered(String.valueOf(productNameLabel));
@@ -90,7 +89,6 @@ public class ShopController implements Initializable {
         }
         return productMap;
     }
-
     public List<Product> getData() {
         List<Product> products = new ArrayList<>();
 
