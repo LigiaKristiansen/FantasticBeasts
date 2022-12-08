@@ -1,66 +1,114 @@
 package com.exercise.onlinestore.main;
 
+import com.exercise.onlinestore.model.Product;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ListIterator;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.List;
-
-public class CartController {
+public class CartController implements Initializable {
+    ArrayList<Product> products;
+    String name;
+    double totalPrice;
     @FXML
-    private VBox cartPane;
+    public Label totalAmountHeader;
+    @FXML
+    public Label labelHeader;
+    @FXML
+    public ImageView navCart;
+    @FXML
+    public Label totalItemsInCart;
+    @FXML
+    public Button addToCart;
+    @FXML
+    public Button removeFromCart;
+    @FXML
+    public Image image;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
-/*    @FXML
-    public void initialize(){
-        List<CartEntry> entries = ShoppingCart.getINSTANCE().getEntries();
-        cartPane.getChildren().clear();
-
-        if(entries.isEmpty()){
-            Label emptyLabel = new Label("Empty Cart");
-            cartPane.getChildren().add(emptyLabel);
+    @FXML
+    ListView<Product> itemsInCart;
+    CartController() {
+        this.products = new ArrayList<>();
+        this.name = " ";
+        this.totalPrice = 0;
+    }
+    public void addToCart(Product product) {
+        this.products.add(product);
+    }
+    public void showCart() {
+        ListIterator<Product> iterator = products.listIterator();
+        while(iterator.hasNext()) {
+            Product product1 = iterator.next();
+            System.out.println(product1);
         }
-        else{
-            Label shoppingCartTitle = new Label("Shopping Cart");
-            cartPane.getChildren().add(shoppingCartTitle);*/
-
-/* TODO skall koden vara kvar?
-                for(CartEntry cartEntry:entries){
-                HBox hBox = new HBox();
-                Label productName = new Label(cartEntry.getProduct().getName());
-                hBox.getChildren().add(productName);
-                cartPane.getChildren().add(hBox);
+    }
+    public void removeFromCart(Product i) {
+        ListIterator<Product> iterator1 = products.listIterator();
+        while(iterator1.hasNext()) {
+            Product item2 = iterator1.next();
+            if (item2.getName().equals(i.getName())) {
+                this.products.remove(i);
+                break;
             }
         }
     }
-
-/* TODO skall koden vara kvar?
-        private HBox cartEntryView(CartEntry cartEntry) throws FileNotFoundException{
-        HBox layout = new HBox();
-        layout.setAlignment(Pos.CENTER_LEFT);
-
-        FileInputStream input = new FileInputStream("src/main/resources/img" + cartEntry.getProduct().getImgSrc());
-        Image image = new Image(input);
-        ImageView imageView = new ImageView(image);
-
-        Label productName = new Label(cartEntry.getProduct().getName());
-
-        Label quantity = new Label(String.valueOf(cartEntry.getQuantity()));
-
-        Button plusButton = new Button("+");
-        Button minusButton = new Button("-");
-
-        Label price = new Label(cartEntry.getProduct().getPrice() + Main.CURRENCY);
-
-        layout.getChildren().addAll(imageView,productName, plusButton, quantity, minusButton, price);
+    public double getTotalPrice() {
+        ListIterator<Product> iterator2 = products.listIterator();
+        this.totalPrice = 0;
+        while(iterator2.hasNext()) {
+            Product product3 = iterator2.next();
+            this.totalPrice = this.totalPrice + (product3.getPrice() + product3.getPrice());
+        }
+        return this.totalPrice;
+    }
 
 
-        return layout;
-    }*/
+
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+
+        itemsInCart.getItems().addAll(products);
+    }
+
+    public void showCartView(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/cart.fxml")));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void showHomeView(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/store-ui.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void showShopView(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
