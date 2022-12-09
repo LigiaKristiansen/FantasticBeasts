@@ -9,7 +9,10 @@ public class Order {
     private Integer quantity;
     private Integer price;
 
+    public Order() {}
+
     public Order(Label productNameLabel, Integer numOfItemsAdded) {
+
     }
 
     public Order(String custName, Integer orderNr, String item, Integer quantity) {
@@ -42,7 +45,10 @@ public class Order {
     }
 
     public void setCustName(String custName) {
-        this.custName = custName;
+        if (custName != null)
+            this.custName = custName;
+        else
+            throw new IllegalArgumentException("Costumer name must contain a value.");
     }
 
     public Integer getOrderNr() {

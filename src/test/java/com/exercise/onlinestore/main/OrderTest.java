@@ -15,8 +15,34 @@ class OrderTest {
     }
 
     @Test
-    void getCustName() {
+    void getCustNameTest() {
+        String expResult = "Anders Andersson";
+        assertEquals(expResult, order.getCustName(), "Input value is equal to value shown.");
+    }
 
+    @Test
+    void getCustNameNullTest() {
+        try {
+            order.setCustName(null);
+            order.getCustName();
+            fail("Null value in getCustName() should trigger an exception");
+        } catch (IllegalArgumentException e) {
+            System.out.println("getCustName captured a Null value exception " + e);
+        } catch (Exception e) {
+            fail("Wrong exeption thrown for getCustName()");
+        }
+    }
+
+    @Test
+    void getCustNameThatDosentExistTest() {
+        try {
+            order.getCustName().equals("Bosse Bildoktorn");
+            fail("Null value in getCustName() should trigger an exception");
+        } catch (IllegalArgumentException e) {
+            System.out.println("getCustName captured a Null value exception " + e);
+        } catch (Exception e) {
+            fail("Wrong exeption thrown for getCustName()");
+        }
     }
 
     @Test
@@ -56,7 +82,7 @@ class OrderTest {
         assertEquals(expResult, order.getOrderNr());
     }
 
-    @Test
+/*    @Test
     void getItemOrdered() {
     }
 
@@ -70,5 +96,5 @@ class OrderTest {
 
     @Test
     void setQuantity() {
-    }
+    }*/
 }
