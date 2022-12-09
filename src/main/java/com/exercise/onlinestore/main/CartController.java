@@ -13,18 +13,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.ListIterator;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class CartController implements Initializable {
-    ArrayList<Product> products;
-    String name;
-    double totalPrice;
+
+    ArrayList<Order> orders;
+    Integer totalPrice;
     @FXML
     public Label totalAmountHeader;
     @FXML
@@ -32,60 +31,36 @@ public class CartController implements Initializable {
     @FXML
     public ImageView navCart;
     @FXML
-    public Label totalItemsInCart;
-    @FXML
-    public Button addToCart;
-    @FXML
-    public Button removeFromCart;
-    @FXML
     public Image image;
+    @FXML
+    public ListView<String> myCart;
     private Stage stage;
     private Scene scene;
     private Parent root;
+    ShopController shopController;
+    ArrayList<String> itemsInCart = new ArrayList<String>();
 
-    @FXML
-    ListView<Product> itemsInCart;
-    CartController() {
-        this.products = new ArrayList<>();
-        this.name = " ";
-        this.totalPrice = 0;
-    }
-    public void addToCart(Product product) {
-        this.products.add(product);
-    }
-    public void showCart() {
-        ListIterator<Product> iterator = products.listIterator();
-        while(iterator.hasNext()) {
-            Product product1 = iterator.next();
-            System.out.println(product1);
+
+    public void GetCart(){
+        shopController.productMap.keySet();
+        Set<String> orderKeys = shopController.productMap.keySet();
+        for (String orderList:orderKeys) {
+            Order order = shopController.productMap.get(orderList);
+            orders.add(order);
+            itemsInCart.add(order.getItemOrdered());
+
         }
-    }
-    public void removeFromCart(Product i) {
-        ListIterator<Product> iterator1 = products.listIterator();
-        while(iterator1.hasNext()) {
-            Product item2 = iterator1.next();
-            if (item2.getName().equals(i.getName())) {
-                this.products.remove(i);
-                break;
-            }
-        }
-    }
-    public double getTotalPrice() {
-        ListIterator<Product> iterator2 = products.listIterator();
-        this.totalPrice = 0;
-        while(iterator2.hasNext()) {
-            Product product3 = iterator2.next();
-            this.totalPrice = this.totalPrice + (product3.getPrice() + product3.getPrice());
-        }
-        return this.totalPrice;
+
+        //myCart.getItems();
     }
 
-
-
+    public CartController() {
+    }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
-        itemsInCart.getItems().addAll(products);
+        myCart.getItems().addAll(itemsInCart);
+
     }
 
     public void showCartView(ActionEvent event) throws IOException {
@@ -95,6 +70,7 @@ public class CartController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
     public void showHomeView(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/fxml/store-ui.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -110,5 +86,6 @@ public class CartController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
 
 }

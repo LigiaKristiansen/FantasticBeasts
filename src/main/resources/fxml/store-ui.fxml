@@ -98,10 +98,7 @@
                                   <Font name="Snap ITC" size="36.0" />
                               </font>
                           </Label>
-                        <Pane prefWidth="500.0">
-                           <children>
-                              <Button layoutX="224.0" layoutY="63.0" mnemonicParsing="false" onAction="#hermanHedning" text="Button" />
-                           </children></Pane>
+                        <Pane prefWidth="500.0" />
                           <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" text="If you were looking for a friend for life, you came to the right place. At Fantastic Beasts Pet Shop you will find the most amazing magical creatures .Take a look at our selection and choose the one that suits you best." textAlignment="RIGHT" wrapText="true">
                            <font>
                               <Font size="16.0" />

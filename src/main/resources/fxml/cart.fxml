@@ -19,22 +19,11 @@
             <Font name="Ravie" size="42.0" />
          </font>
       </Label>
-      <ListView fx:id="itemsInCart" layoutX="245.0" layoutY="179.0" prefHeight="599.0" prefWidth="413.0" />
       <Label fx:id="totalAmountHeader" layoutX="798.0" layoutY="585.0" text="Total Amount:">
          <font>
             <Font name="Ravie" size="16.0" />
          </font>
       </Label>
-      <Button fx:id="addToCart" layoutX="805.0" layoutY="426.0" mnemonicParsing="false" text="+">
-         <font>
-            <Font name="Ravie" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="removeFromCart" layoutX="857.0" layoutY="426.0" mnemonicParsing="false" text="-">
-         <font>
-            <Font name="Ravie" size="20.0" />
-         </font>
-      </Button>
       <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="40.0">
          <children>
             <Button mnemonicParsing="false" onAction="#showHomeView" styleClass="transparent" text="Fantastic Beasts Pet Shop">
@@ -77,8 +66,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label fx:id="totalItemsInCart" alignment="CENTER_RIGHT" style="-fx-background-color: #b2adaa;" text="0" />
          </children>
       </HBox>
+      <Label fx:id="totalAmount" layoutX="971.0" layoutY="585.0" prefHeight="17.0" prefWidth="74.0">
+         <font>
+            <Font name="Ravie" size="16.0" />
+         </font>
+      </Label>
+      <ListView layoutX="260.0" layoutY="205.0" prefHeight="479.0" prefWidth="405.0" />
+      <ListView fx:id="myCart" layoutX="363.0" layoutY="228.0" prefHeight="417.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
