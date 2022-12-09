@@ -101,7 +101,7 @@ public class Window4Controller implements Initializable {
     }
 
     public void CellOrderNrCommit(TableColumn.CellEditEvent<Order, Integer> orderIntegerCellEditEvent) {
-        if (tableViewOrder.getItems().stream().equals(orderIntegerCellEditEvent.getNewValue() <)) {
+        if (tableViewOrder.getItems().stream().equals(orderIntegerCellEditEvent.getNewValue() )) {
             return;
         } else {
             System.out.println("Value is not unique.");

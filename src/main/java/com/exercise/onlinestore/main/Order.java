@@ -28,9 +28,7 @@ public class Order {
         this.price = price;
     }
 
-    public Order() {
 
-    }
 
     public Integer getPrice() {
         return price;

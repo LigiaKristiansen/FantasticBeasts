@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,6 +20,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -29,6 +32,8 @@ public class ShopController implements Initializable {
     public Order addOrder = new Order(null, 0, 0);
     public Map<String, Order> productMap = new HashMap<>();
     public Label productDescriptionLabel;
+    @FXML
+    public VBox productView;
     @FXML
     BorderPane contentPane;
     Integer numOfItemsAdded = 0;
@@ -63,6 +68,13 @@ public class ShopController implements Initializable {
 
     public void showShopView(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void showEmployeeView(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/Window4.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -189,27 +201,27 @@ public class ShopController implements Initializable {
         addButton.setText("ADD TO SUITCASE");
         addButton.setUserData(productNameLabel);
         addButton.setOnAction(new EventHandler<ActionEvent>() {
-
-
             @Override
             public void handle(ActionEvent actionEvent) {
-                //Node sourceComponent = (Node) actionEvent.getSource();
-                //String productNameLabel = (String) sourceComponent.getUserData();
+                /*Node sourceComponent = (Node) actionEvent.getSource();
+                String productName = (String) sourceComponent.getUserData();
+                ShoppingCart shoppingCart = ShoppingCart.getINSTANCE();
+                shoppingCart.addProducts(product.getName());*/
+
                 numOfItemsAdded++;
                 productPrice = (int) product.getPrice();
                 cartAdd();
-
                 System.out.println(productMap);
                 System.out.println(addOrder.getItemOrdered() + " " + addOrder.getQuantity() + " " + addOrder.getPrice());
-                //ShoppingCart shoppingCart = ShoppingCart.getINSTANCE();
-                //shoppingCart.addProducts(productNameLabel);
-            }
 
+            }
         });
         System.out.println("Hela listan: " + productMap);
 
         numOfItemsAdded = 0;
+
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -258,6 +270,7 @@ public class ShopController implements Initializable {
         }
 
     }
+
 
     public void win4(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Window4.fxml")));

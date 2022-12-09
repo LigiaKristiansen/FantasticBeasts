@@ -1,12 +1,13 @@
-package com.exercise.onlinestore.test;
+package com.exercise.onlinestore.main;
 
-import com.exercise.onlinestore.main.Billing;
-import com.exercise.onlinestore.main.HelloApplication;
+
 import javafx.application.Application;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+
+import static org.testng.Assert.assertEquals;
 
 public class BillingTest {
 

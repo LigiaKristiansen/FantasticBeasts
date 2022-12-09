@@ -36,14 +36,13 @@ public class AppController {
         stage.show();
     }
 
-    /*public void showShopView() throws IOException {
-        contentPane.setCenter(new ShopView().getView());
-    }*/
-
-    public void showEmployeeView() {
-        contentPane.setCenter(new Label("Employee View"));
+    public void showEmployeeView(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/fxml/Window4.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
-
 
     public void showCartView(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/fxml/cart.fxml"));
