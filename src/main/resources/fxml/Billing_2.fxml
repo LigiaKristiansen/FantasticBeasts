@@ -8,44 +8,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="367.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/18"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.Billing">
-   <ImageView fx:id="number" fitHeight="55.0" fitWidth="64.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@../img/two-number-round-icon.png"/>
+<AnchorPane prefHeight="367.0" prefWidth="600.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exercise.onlinestore.main.Billing">
+   <ImageView fx:id="number" fitHeight="55.0" fitWidth="64.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../img/two-number-round-icon.png" />
    </ImageView>
    <Label layoutX="82.0" layoutY="28.0" text="Delivery Information">
       <font>
-         <Font name="System Bold" size="18.0"/>
+         <Font name="System Bold" size="18.0" />
       </font>
    </Label>
-   <RadioButton layoutX="42.0" layoutY="99.0" mnemonicParsing="false"/>
-   <ImageView fx:id="img_1" fitHeight="27.0" fitWidth="74.0" layoutX="71.0" layoutY="99.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@../img/download.jpg"/>
+   <RadioButton fx:id="first" layoutX="42.0" layoutY="99.0" mnemonicParsing="false" onAction="#firstclick" />
+   <ImageView fx:id="img_1" fitHeight="27.0" fitWidth="74.0" layoutX="71.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../img/download.jpg" />
    </ImageView>
-   <RadioButton layoutX="42.0" layoutY="191.0" mnemonicParsing="false"/>
+   <RadioButton fx:id="second" layoutX="42.0" layoutY="191.0" mnemonicParsing="false" onAction="#secondclick" />
    <Label layoutX="167.0" layoutY="99.0" text="Postal code, any postal agent1-2 weekdays">
       <font>
-         <Font size="14.0"/>
+         <Font size="14.0" />
       </font>
    </Label>
-   <Label layoutX="82.0" layoutY="135.0"
-          text="Delivery to any post office. Decide for yourself when it suits you to pick up your order"/>
-   <ImageView fx:id="img_2" fitHeight="27.0" fitWidth="74.0" layoutX="71.0" layoutY="189.0" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@../img/download.jpg"/>
+   <Label layoutX="82.0" layoutY="135.0" text="Delivery to any post office. Decide for yourself when it suits you to pick up your order" />
+   <ImageView fx:id="img_2" fitHeight="27.0" fitWidth="74.0" layoutX="71.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../img/download.jpg" />
    </ImageView>
-   <Label layoutX="167.0" layoutY="191.0" text="Home deliveryMonday-Friday 8-17"/>
-   <Label layoutX="82.0" layoutY="223.0"
-          text="PostNord home delivery 8-17 on weekdays. Delivered within 3 working days The full amount "/>
-   <Label layoutX="82.0" layoutY="241.0"
-          text="of the fee.  for this delivery option will not be refunded in the event of a return of the"/>
-   <Label layoutX="82.0" layoutY="259.0" text="entire order."/>
-   <Button layoutX="213.0" layoutY="299.0" mnemonicParsing="false" onAction="#next2" prefHeight="38.0" prefWidth="179.0"
-           style="-fx-background-color: #000;" text="Proceed to Next" textFill="#fcfbfb">
+   <Label layoutX="167.0" layoutY="191.0" text="Home deliveryMonday-Friday 8-17" />
+   <Label layoutX="82.0" layoutY="223.0" text="PostNord home delivery 8-17 on weekdays. Delivered within 3 working days The full amount " />
+   <Label layoutX="82.0" layoutY="241.0" text="of the fee.  for this delivery option will not be refunded in the event of a return of the" />
+   <Label layoutX="82.0" layoutY="259.0" text="entire order." />
+   <Button layoutX="213.0" layoutY="299.0" mnemonicParsing="false" onAction="#next2" prefHeight="38.0" prefWidth="179.0" style="-fx-background-color: #000;" text="Proceed to Next" textFill="#fcfbfb">
       <font>
-         <Font name="System Bold" size="14.0"/>
+         <Font name="System Bold" size="14.0" />
       </font>
    </Button>
 </AnchorPane>
