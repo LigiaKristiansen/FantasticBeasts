@@ -82,12 +82,21 @@ public class ShopController implements Initializable {
     }
 
     public void showCartView(ActionEvent event) throws IOException {
+        //Push data to scene "video"
+        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/fxml/cart.fxml")));
+        Parent root = loader.load();
+        CartController cartController = loader.getController();
+        cartController.GetCart(productMap);
         root = FXMLLoader.load(getClass().getResource("/fxml/cart.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
+
+
+
     public Map<String, Order> cartAdd() {
         if (productMap.containsKey(String.valueOf(productNameLabel))) {
             addOrder.setItemOrdered(String.valueOf(productNameLabel));
@@ -101,6 +110,14 @@ public class ShopController implements Initializable {
         }
         return productMap;
     }
+    public Map<String, Order> getProductMap() {
+        return productMap;
+    }
+
+    public void setProductMap(Map<String, Order> productMap) {
+        this.productMap = productMap;
+    }
+
     public List<Product> getData() {
         List<Product> products = new ArrayList<>();
 

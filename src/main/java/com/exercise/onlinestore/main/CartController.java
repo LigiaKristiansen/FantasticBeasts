@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Separator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,8 +21,7 @@ import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class CartController {
     @FXML
@@ -76,6 +76,7 @@ public class CartController {
     public void initialize() throws FileNotFoundException {
         List<CartEntry> entries = ShoppingCart.getINSTANCE().getEntries();
         cartPane.getChildren().clear();
+
 
         if (entries.isEmpty()) {
             Label emptyLabel = new Label("Empty Suitcase");
@@ -154,75 +155,57 @@ public class CartController {
         return layout;
     }
 
-}
+ArrayList<Order> orders = new ArrayList<>();
+Integer totalPrice;
+@FXML
+public Label totalAmountHeader;
+@FXML
+public Label labelHeader;
+@FXML
+public ImageView navCart;
+@FXML
+public Image image;
 
 
-/*public class CartController implements Initializable {
 
-    ArrayList<Order> orders;
-    Integer totalPrice;
-    @FXML
-    public Label totalAmountHeader;
-    @FXML
-    public Label labelHeader;
-    @FXML
-    public ImageView navCart;
-    @FXML
-    public Image image;
-    @FXML
-    public ListView<String> myCart;
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-    ShopController shopController;
-    ArrayList<String> itemsInCart = new ArrayList<String>();
-
-
-    public void GetCart(){
-        shopController.productMap.keySet();
-        Set<String> orderKeys = shopController.productMap.keySet();
+ShopController shopController = new ShopController();
+Map<String, Order> inCart = shopController.getProductMap();
+    public void GetCart(Map<String, Order> inCart){
+        Set<String> orderKeys = inCart.keySet();
+        System.out.println("i vagn" + inCart);
         for (String orderList:orderKeys) {
-            Order order = shopController.productMap.get(orderList);
-            orders.add(order);
-            itemsInCart.add(order.getItemOrdered());
+            Order order = inCart.get(orderList);
+            myCart.getItems();
 
         }
 
-        //myCart.getItems();
     }
+    @FXML
+    ListView<Order> myCart;
+ArrayList<Order> itemsInCart = new ArrayList<>();
+/*
+    public void GetCart(Map<String, Order> productMap){
+        shopController.getProductMap();
+        Set<String> orderKeys = productMap.keySet();
+        for (String orderList:orderKeys) {
+            Order order = productMap.get(orderList);
+            myCart.getItems().add(order);
+        }
+
+    }
+
+    HashMap<String, HashMap> selects = new HashMap<String, HashMap>();
+
+for(Map.Entry<String, HashMap> entry : selects.entrySet()) {
+    String key = entry.getKey();
+    HashMap value = entry.getValue();
+    */
+
+
+
 
     public CartController() {
     }
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-
-        myCart.getItems().addAll(itemsInCart);
-
-    }
-
-    public void showCartView(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/cart.fxml")));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void showHomeView(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/store-ui.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void showShopView(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/fxml/shop.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
 
-}*/
+}
